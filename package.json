@@ -1,0 +1,6 @@
+{
+  "private": true,
+  "scripts": {
+    "build": "node bundle-scripts > main.js"
+  }
+}

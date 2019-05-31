@@ -39,11 +39,12 @@ const shaderFiles = [
 console.log('// This file is generated using the scripts-loader.php file')
 console.log('// Source code changes should be made in the files that are')
 console.log('// used for this file')
+console.log()
 
-for (const jsFile of jsFiles) {
-  console.log('// ****', jsFile, '***')
-  console.log(read('scripts', jsFile))
-  console.log('// **** end', jsFile, '***\n')
+for (const name of jsFiles) {
+  console.log('// ****', name, '***')
+  console.log(read('scripts', name))
+  console.log('// **** end', name, '***\n')
 }
 
-console.log(`\nwindow.shaderData = ${JSON.stringify(shaderFiles.map(path => ({ name: shaderFile, code: read('shaders', shaderFile) })))}`)
+console.log(`\nwindow.shaderData = ${JSON.stringify(shaderFiles.map(name => ({ name, code: read('shaders', name) })))}`)
